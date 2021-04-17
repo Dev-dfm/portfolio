@@ -36,6 +36,7 @@ a {
 }
 
 nav {
+  border: 1px red solid;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "logo burger";
@@ -49,6 +50,7 @@ nav {
 }
 
 .burger {
+  border: blue 1px solid;
   grid-area: burger;
   justify-self: end;
   margin-right: 1em;
@@ -64,19 +66,6 @@ ul {
   grid-auto-flow: column;
   grid-gap: 1em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .hero {
   height: 100vh;
