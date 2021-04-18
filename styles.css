@@ -42,7 +42,6 @@ ul {
 
 header {
   text-align: left;
-  height: 100px;
 }
 
 .logo {
@@ -59,8 +58,8 @@ nav {
 nav li {
   align-content: center;
   margin: 1em 2em;
-  position: relative;
-  /*top: -2em;*/
+  /*position: relative;
+  top: -2em;*/
 }
 
 nav a {
@@ -70,6 +69,7 @@ nav a {
   opacity: 0; /* set default: opacity to 0% (hide) */
   transition: opacity 150ms ease-in-out; /* animates opening burger-effect */
 }
+
 
 nav a:hover {
   color: white;
@@ -132,7 +132,7 @@ nav a:hover {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: minmax(100px, 1fr) 8fr minmax(100px, 1fr);
   height: 100vh;
   align-items: center;
   justify-items: center;
@@ -173,6 +173,7 @@ main {
   header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 12fr);
+
   }
 
   .logo {
