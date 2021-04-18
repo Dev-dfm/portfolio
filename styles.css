@@ -51,7 +51,7 @@ header {
 
 nav {
   transform: scale(1, 0); /* squeezes the height to 0% */
-  transition: transform 400ms ease-in-out; /* animates the list-test */
+  transition: transform 400ms ease-in-out; /* animates the nav-text */
   transform-origin: top; /* starts animation on top */
 }
 
@@ -125,6 +125,7 @@ nav a:hover {
 .nav-toggle-label span::after {
   top: 7px;
 }
+
 
 /*////////////////////////////////////////////////////////
                             MAIN 
