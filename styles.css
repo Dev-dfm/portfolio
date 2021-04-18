@@ -4,7 +4,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
 }
 
 body {
@@ -15,7 +14,6 @@ body {
   background-size: 400% 400%;
   position: relative;
   animation: change 10s ease-in-out infinite;
-  
 }
 
 @keyframes change {
@@ -32,61 +30,192 @@ body {
 
 a {
   text-decoration: none;
-  color: rgb(232, 177, 113);
-}
-
-nav {
-  border: 1px red solid;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "logo burger";
-  align-items: center;
-  margin-top: 25px;
-  padding-left: 10px;
-}
-
-.logo {
-  height: 5em;
-}
-
-.burger {
-  border: blue 1px solid;
-  grid-area: burger;
-  justify-self: end;
-  margin-right: 1em;
 }
 
 ul {
   list-style-type: none;
 }
 
-.burger,
-ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 1em;
+/*////////////////////////////////////////////////////////
+                            HEADER
+////////////////////////////////////////////////////////*/
+
+header {
+  text-align: left;
+  height: 100px;
 }
 
-.hero {
-  height: 100vh;
+.logo {
+  height: 100px;
+  margin-left: 1em;
+}
+
+nav {
+  transform: scale(1, 0); /* squeezes the height to 0% */
+  transition: transform 400ms ease-in-out; /* animates the list-test */
+  transform-origin: top; /* starts animation on top */
+}
+
+nav li {
+  align-content: center;
+  margin: 1em 2em;
+  position: relative;
+  /*top: -2em;*/
+}
+
+nav a {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 10em;
+  justify-content: flex-end;
+  color: rgb(232, 177, 113);
+  opacity: 0; /* set default: opacity to 0% (hide) */
+  transition: opacity 150ms ease-in-out; /* animates opening burger-effect */
 }
 
-h1 {
-  font-size: 1.5em;
+nav a:hover {
+  color: white;
 }
 
-h2 {
+/*/////////////////////// CHECKBOX /////////////////////////*/
+.nav-toggle:checked ~ nav {
+  /* if the checkbos is checked, it look looks nav that sibiling of nav-toggle */
+  transform: scale(1, 1); /* toogles the list-text and scales it to 100% */
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1; /* if the checkbox is checked, the opacity of the list-test is set to 100%*/
+  transition: opacity 250ms ease-in-out 250ms; /*sets a delay of 250ms before starting the close-animation of 250ms*/
+}
+
+.nav-toggle {
+  display: none; /* hides the checkbox */
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2em;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+/* burger lines */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: rgb(232, 177, 113);
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+/*////////////////////////////////////////////////////////
+                            MAIN 
+////////////////////////////////////////////////////////*/
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+}
+
+.hero h1 {
+  font-size: 1.5rem;
+}
+
+.hero h2 {
   font-size: 3em;
   color: rgb(232, 177, 113);
 }
 
-h3 {
-    font-size: 2.2em;
-    font-family: 'Roboto Mono', monospace;
-    margin-top: 1em;
-    margin-bottom: 2em;
+.hero h3 {
+  font-size: 2.2em;
+  font-family: "Roboto Mono", monospace;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.social-links {
+  width: 1.5em;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10em;
+  gap: 2em;
+}
+
+/*//////////////// DISPLAY FOR BIG SCREEN /////////////////////*/
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none; /* turns off burger label */
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 12fr);
+  }
+
+  .logo {
+    grid-column: 1;
+  }
+
+  nav {
+    all: unset; /* deleats all settings defined before */
+    grid-column: 2 / -1;
+    align-self: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav li {
+    margin: 0 2em;
+    top: 0em;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  /* creates bars over nav-text */
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: RGB(232, 177, 113);
+    position: absolute;
+    top: -1em;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    transform: scale(0, 1); /* shirnks the width to 0% */
+    transition: transform ease-in-out 250ms; /* animamtion time of 250ms*/
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1); /* enlarge the width to 100% */
+  }
 }
