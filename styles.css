@@ -48,6 +48,10 @@ header {
 .logo {
   height: 100px;
   margin-left: 1em;
+  /* doesen't work */
+  fill: black;
+  stroke: black;
+  /* //////////////*/
 }
 
 nav {
@@ -130,8 +134,10 @@ nav a:hover {
 
 main {
   display: grid;
-  grid-template-columns: minmax(100px, 1fr) 8fr minmax(100px, 1fr);
-  height: 100vh;
+  grid-template-columns: minmax(150px, 1fr) 8fr minmax(150px, 1fr);
+  grid-template-rows: minmax(800px, 1fr);
+  height: 100vh; 
+  /* position: relative; */
   align-items: center;
   justify-items: center;
 }
@@ -163,7 +169,6 @@ main {
   height: 200px;
   position: absolute;
   bottom: 100px;
-
 }
 
 .social-icon {
@@ -197,7 +202,6 @@ main {
   header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 12fr);
-
   }
 
   .logo {
