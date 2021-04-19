@@ -79,12 +79,12 @@ nav a:hover {
 
 /*/////////////////////// CHECKBOX /////////////////////////*/
 .nav-toggle:checked ~ nav {
-  /* if the checkbos is checked, it look looks nav that sibiling of nav-toggle */
-  transform: scale(1, 1); /* toogles the list-text and scales it to 100% */
+  /* if the checkbox is checked, it looks for nav is sibiling of nav-toggle */
+  transform: scale(1, 1); /* toggles the nav-text and scales it to 100% */
 }
 
 .nav-toggle:checked ~ nav a {
-  opacity: 1; /* if the checkbox is checked, the opacity of the list-test is set to 100%*/
+  opacity: 1; /* if the checkbox is checked, the opacity of the nav-text is set to 100% */
   transition: opacity 250ms ease-in-out 250ms; /*sets a delay of 250ms before starting the close-animation of 250ms*/
 }
 
@@ -185,7 +185,7 @@ main {
   }
 
   nav {
-    all: unset; /* deleats all settings defined before */
+    all: unset; /* deletes all settings defined before */
     grid-column: 2 / -1;
     align-self: center;
   }
