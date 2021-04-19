@@ -42,6 +42,8 @@ ul {
 
 header {
   text-align: left;
+  position: fixed;
+  width: 100%;
 }
 
 .logo {
@@ -139,6 +141,7 @@ main {
   justify-items: center;
 }
 
+
 .hero h1 {
   font-size: 1.5rem;
 }
@@ -164,7 +167,7 @@ main {
   gap: 2em;
 }
 
-/*//////////////// DISPLAY FOR BIG SCREEN /////////////////////*/
+/*//////////////// DISPLAY DESKTOP VERSION /////////////////////*/
 
 @media screen and (min-width: 800px) {
   .nav-toggle-label {
