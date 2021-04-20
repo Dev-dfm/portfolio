@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto+Mono:ital,wght@0,400;1,100&family=Roboto+Slab&display=swap');
+
 *,
 *:before,
 *:after {
@@ -153,7 +155,9 @@ main {
 
 .hero h3 {
   font-size: 2.2em;
-  font-family: "Roboto Mono", monospace;
+  /* font-family: "Roboto Mono", monospace; */
+  /* font-family: 'Roboto Slab', serif; */
+  font-family: 'Cutive Mono', monospace;
   margin-top: 1em;
   margin-bottom: 2em;
 }
