@@ -50,10 +50,6 @@ header {
 .logo {
   height: 100px;
   margin-left: 1em;
-  /* doesen't work */
-  fill: black;
-  stroke: black;
-  /* //////////////*/
 }
 
 nav {
